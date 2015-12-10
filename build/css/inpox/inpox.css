@@ -1,0 +1,167 @@
+/* line 5, ../../../src/scss/inpox/inpox.scss */
+.inpox {
+  cursor: pointer;
+  position: relative;
+}
+/* line 6, ../../../src/scss/inpox/inpox.scss */
+.inpox,
+.inpox * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 12, ../../../src/scss/inpox/inpox.scss */
+.inpox, .inpox-label {
+  color: #777177;
+}
+/* line 25, ../../../src/scss/inpox/_mixins.scss */
+.inpox::-moz-selection, .inpox-label::-moz-selection {
+  background-color: transparent;
+  color: #0069ff;
+  text-shadow: none;
+}
+/* line 30, ../../../src/scss/inpox/_mixins.scss */
+.inpox::selection, .inpox-label::selection {
+  background-color: transparent;
+  color: #0069ff;
+  text-shadow: none;
+}
+/* line 17, ../../../src/scss/inpox/inpox.scss */
+.inpox input[type="radio"],
+.inpox input[type="checkbox"] {
+  display: none;
+}
+/* line 21, ../../../src/scss/inpox/inpox.scss */
+.inpox, .inpox[class*="inpox-"] {
+  display: inline-block;
+}
+
+/* line 16, ../../../src/scss/inpox/_mixins.scss */
+.inpox-label:before, .inpox-label:after {
+  content: "";
+  display: inline-block;
+}
+/* line 31, ../../../src/scss/inpox/inpox.scss */
+.inpox-label:before, .inpox-label:after {
+  -moz-transition: all 0.3s cubic-bezier(0, 1.1, 0.36, 1.13);
+  -o-transition: all 0.3s cubic-bezier(0, 1.1, 0.36, 1.13);
+  -webkit-transition: all 0.3s cubic-bezier(0, 1.1, 0.36, 1.13);
+  transition: all 0.3s cubic-bezier(0, 1.1, 0.36, 1.13);
+}
+/* line 35, ../../../src/scss/inpox/inpox.scss */
+.inpox-label:before {
+  position: relative;
+  top: 4px;
+}
+
+/* line 47, ../../../src/scss/inpox/inpox.scss */
+.inpox.inpox-cb .inpox-label:before, .inpox.inpox-rb .inpox-label:before {
+  width: 18px;
+  height: 18px;
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+  border: 0 solid #ffffff;
+  margin-right: 8px;
+}
+/* line 53, ../../../src/scss/inpox/inpox.scss */
+.inpox.inpox-cb .inpox-label:after, .inpox.inpox-rb .inpox-label:after {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 64, ../../../src/scss/inpox/inpox.scss */
+.inpox input:checked + .inpox-label:after {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+/* line 73, ../../../src/scss/inpox/inpox.scss */
+.inpox.inpox-cb input:checked + .inpox-label:before, .inpox.inpox-rb input:checked + .inpox-label:before {
+  background-color: #efefef;
+}
+
+/* line 85, ../../../src/scss/inpox/inpox.scss */
+.inpox.inpox-cb .inpox-label:after {
+  -moz-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  -webkit-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0);
+  width: 6px;
+  height: 12px;
+  border-style: solid;
+  border-color: #777177;
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  left: 6px;
+  top: 6px;
+}
+
+/* line 104, ../../../src/scss/inpox/inpox.scss */
+.inpox.inpox-cb input:checked + .inpox-label:before {
+  border: 9px solid #efefef;
+}
+/* line 107, ../../../src/scss/inpox/inpox.scss */
+.inpox.inpox-cb input:checked + .inpox-label:after {
+  -moz-transform: rotate(40deg) scale(1);
+  -ms-transform: rotate(40deg) scale(1);
+  -webkit-transform: rotate(40deg) scale(1);
+  transform: rotate(40deg) scale(1);
+}
+
+/* line 119, ../../../src/scss/inpox/inpox.scss */
+.inpox.inpox-rb .inpox-label:before, .inpox.inpox-rb .inpox-label:after {
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+/* line 123, ../../../src/scss/inpox/inpox.scss */
+.inpox.inpox-rb .inpox-label:after {
+  width: 8px;
+  height: 8px;
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  background-color: #777177;
+  position: absolute;
+  top: 9px;
+  left: 5px;
+}
+
+/* line 140, ../../../src/scss/inpox/inpox.scss */
+.inpox.inpox-rb input:checked + .inpox-label:after {
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+/* line 152, ../../../src/scss/inpox/inpox.scss */
+.inpox.inpox-switcher .inpox-label:before {
+  width: 36px;
+  height: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+}
+/* line 157, ../../../src/scss/inpox/inpox.scss */
+.inpox.inpox-switcher .inpox-label:after {
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  background-color: #cfcccf;
+  position: absolute;
+  top: 8px;
+  left: 4px;
+}
+
+/* line 174, ../../../src/scss/inpox/inpox.scss */
+.inpox.inpox-switcher input:checked + .inpox-label:after {
+  background-color: #0069ff;
+  left: 20px;
+}

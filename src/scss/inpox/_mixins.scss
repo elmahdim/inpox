@@ -1,0 +1,35 @@
+
+// Sizing shortcuts
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+
+// Pseudo elements
+@mixin ba(){
+  &:before,
+  &:after {
+    content: "";
+    display: inline-block;
+  }
+}
+
+// highligh
+@mixin selection($bg: inherit, $color: #000) {
+  &::-moz-selection {
+    background-color: $bg;
+    color: $color;
+    text-shadow: none;
+  }
+  &::selection {
+    background-color: $bg;
+    color: $color;
+    text-shadow: none;
+  }
+}

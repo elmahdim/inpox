@@ -1,0 +1,182 @@
+@import "all", "compass";
+
+
+// global inpox setup
+.inpox {
+  &,
+  * {
+    @include box-sizing(border-box);
+  }
+  cursor: pointer;
+  position: relative;
+  &,
+  &-label {
+    color: $brand-color-base;
+    @include selection(transparent, $brand-primary);
+  }
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: none;
+  }
+  &,
+  &[class*="inpox-"] {
+    display: inline-block;
+  }
+}
+
+// inpox label
+.inpox {
+  &-label {
+    @include ba();
+    &:before,
+    &:after {
+      @include single-transition(all, .3s, cubic-bezier(0, 1.1, 0.36, 1.13));
+    }
+    &:before {
+      position: relative;
+      top: 4px;
+    }
+  }
+}
+
+// checkbox & Radio inpox-label
+.inpox {
+  &.inpox-cb,
+  &.inpox-rb {
+    .inpox-label {
+      &:before {
+        @include square($inpox-width);
+        @include box-shadow(0 0 1px $inpox-border-color);
+        border: 0 solid $inpox-bg-color;
+        margin-right: $inpox-margin-right;
+      }
+      &:after {
+        @include transparent;
+      }
+    }
+  }
+}
+
+// inpox checked state
+.inpox {
+  input:checked {
+    & + .inpox-label {
+      &:after {
+        @include opaque;
+      }
+    }
+  }
+  &.inpox-cb,
+  &.inpox-rb {
+    input:checked {
+      & + .inpox-label {
+        &:before {
+          background-color: $inpox-bg-checked;
+        }
+      }
+    }
+  }
+}
+
+// inpox checkbox
+.inpox {
+  &.inpox-cb {
+    .inpox-label {
+      &:after {
+        @include transform( rotate(0deg) scale(0) );
+        @include size($inpox-width - 12, $inpox-width - 6);
+        border-style: solid;
+        border-color: $inpox-checkmark-color;
+        border-width: 0 2px 2px 0;
+        position: absolute;
+        left: 6px;
+        top: 6px;
+      }
+    }
+  }
+}
+
+// checkbox checked state
+.inpox {
+  &.inpox-cb {
+    input:checked {
+      & + .inpox-label {
+        &:before {
+          border: $inpox-width/2 solid $inpox-bg-checked;
+        }
+        &:after {
+          @include transform( rotate(40deg) scale(1) );
+        }
+      }
+    }
+  }
+}
+
+// inpox radio button
+.inpox {
+  &.inpox-rb {
+    .inpox-label {
+      &:before,
+      &:after {
+        @include border-radius(100%);
+      }
+      &:after {
+        @include square($inpox-width - 10);
+        @include transform( scale(0) );
+        background-color: $inpox-checkmark-color;
+        position: absolute;
+        top: $inpox-width / 2;
+        left: $inpox-width - 13;
+      }
+    }
+  }
+}
+
+// radio checked state
+.inpox {
+  &.inpox-rb {
+    input:checked {
+      & + .inpox-label {
+        &:after {
+          @include transform( scale(1) );
+        }
+      }
+    }
+  }
+}
+
+// inpox switcher
+.inpox {
+  &.inpox-switcher {
+    .inpox-label {
+      &:before {
+        @include size($inpox-switcher-width, $inpox-switcher-height);
+        @include border-radius($inpox-switcher-height);
+        @include box-shadow(0 0 1px $inpox-border-color);
+      }
+      &:after {
+        @include border-radius(100%);
+        @include square($inpox-width - 6);
+        background-color: lighten( $inpox-checkmark-color, 35% );
+        position: absolute;
+        top: $inpox-width - 10;
+        left:4px;
+      }
+    }
+  }
+}
+
+// switcher checked state
+.inpox {
+  &.inpox-switcher {
+    input:checked {
+      & + .inpox-label {
+        &:after {
+          background-color: $brand-primary;
+          left: $inpox-switcher-width - 16;
+        }
+      }
+    }
+  }
+}
+

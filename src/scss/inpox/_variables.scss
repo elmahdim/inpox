@@ -1,0 +1,18 @@
+// == inpox colors
+//
+//##
+$brand-primary         : #0069ff !default;
+$brand-color-base      : #777177 !default;
+$inpox-bg-color        : #ffffff !default;
+$inpox-bg-checked      : #efefef !default;
+$inpox-checkmark-color : $brand-color-base !default;
+$inpox-border-color    : rgba(#000,.4) !default;
+
+// == inpox sizes
+//
+//##
+$inpox-size            : 18px !default;
+$inpox-width           : $inpox-size !default;
+$inpox-margin-right    : $inpox-size - 10 !default;
+$inpox-switcher-width  : $inpox-size * 2 !default;
+$inpox-switcher-height : $inpox-size + 2 !default;
